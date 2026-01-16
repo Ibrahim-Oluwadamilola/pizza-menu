@@ -1,5 +1,5 @@
-import react from "react";
-import reactDom from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import "./index.css";
 
 const pizzaData = [
@@ -51,6 +51,7 @@ function App() {
 
   return (
     <div className="container">
+      <h1>Hello React</h1>
       <Header />
       <Menu />
       <Footer />
@@ -59,9 +60,13 @@ function App() {
 }
 
 function Header() {
-  <header className="header">
-  return <h1 style={style}>Fast React Pizza co.</h1>;
-  </header>
+  const style= { color: "red", fontSize: "48px"};
+  return (
+    <header className="header">
+  <h1 style={style}>Fast React Pizza co.
+  </h1>
+    </header>
+   );
   
 }
 
@@ -69,11 +74,12 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our menu</h2>
-      <Pizza name="pizza spinaci" ingredients="Tomato, mozarella, spinach, and ricotta cheese" price={12} photoName="pizzas/spinaci.jpg"/>
-      <Pizza name="Pizza Funghi",
-    ingredients="Tomato, mozarella, mushrooms, and onion",
-    price= {12},
-    photoName="pizzas/funghi.jpg",
+      <Pizza name="pizza spinaci" ingredients="Tomato, mozarella, spinach, and ricotta cheese" 
+      price={12} photoName="pizzas/spinaci.jpg"/>
+      <Pizza name="Pizza Funghi"
+    ingredients="Tomato, mozarella, mushrooms, and onion"
+    price= {12}
+    photoName="pizzas/funghi.jpg"
     />
       <Pizza />
       <Pizza />
@@ -90,9 +96,12 @@ function Footer() {
 
   // if(hour = openHour && hour <= closeHour) alert("We're currently open!"); else alert("Sorry we're closed");
   return (
-    <Footer className="footer">{new Date().toLocaleTimeString()}. We're currently open</Footer>
+    <footer className="footer">{new Date().toLocaleTimeString()}. We're 
+    currently open</footer>
   );
 }
+
+
 
 function Pizza(props) {
   console.log(props)
@@ -107,9 +116,12 @@ function Pizza(props) {
     </div>
   );
 }
-const root = reactDom.createRoot(document.getElementById("root"));
+
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <react.StrictMode>
+  <React.StrictMode>
     <App />
-  </react.StrictMode>
+  </React.StrictMode>
 );
